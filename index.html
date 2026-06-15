@@ -301,6 +301,98 @@
       text-align: center;
       margin-top: 2.5rem;
     }
+
+    /* ── MOBILE-ONLY CAROUSEL ─────────────────────── */
+    .mob-car-arrow { display: none; }
+    .mob-car-dots  { display: none; }
+
+    @media (max-width: 767px) {
+      /* Outer row: [arrow] [viewport] [arrow] */
+      .mob-car-outer {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .mob-car-vp {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      /* Arrow buttons — 44px tap target */
+      .mob-car-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 44px; height: 44px;
+        border-radius: 50%;
+        border: 1.5px solid var(--cream-dk);
+        background: var(--white);
+        color: var(--dark);
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.18s, border-color 0.18s;
+      }
+      .mob-car-arrow:hover, .mob-car-arrow:active {
+        background: var(--sage-pale);
+        border-color: var(--sage);
+      }
+      .mob-car-arrow svg {
+        width: 18px; height: 18px;
+        stroke: currentColor; fill: none;
+        stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+        pointer-events: none;
+      }
+
+      /* Services grid → flex track on mobile */
+      .svc-teaser-grid {
+        display: flex !important;
+        gap: 0 !important;
+        transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        will-change: transform;
+      }
+      .svc-teaser-card {
+        flex: 0 0 100% !important;
+        min-width: 0 !important;
+        width: 100% !important;
+      }
+
+      /* Testimonials grid → flex track on mobile */
+      .test-grid {
+        display: flex !important;
+        gap: 0 !important;
+        transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        will-change: transform;
+      }
+      .test-card {
+        flex: 0 0 100% !important;
+        min-width: 0 !important;
+        width: 100% !important;
+      }
+
+      /* Dot indicators */
+      .mob-car-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1.25rem;
+      }
+      .mob-dot {
+        width: 8px; height: 8px;
+        border-radius: 100px;
+        border: none;
+        background: var(--cream-dk);
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.22s, width 0.22s;
+      }
+      .mob-dot.active {
+        background: var(--sage);
+        width: 22px;
+      }
+    }
   </style>
 </head>
 <body class="page-wrap" data-page="index.html">
@@ -458,7 +550,12 @@
       <p class="sub">From high-risk pregnancy through the fourth trimester, loss, and beyond.</p>
     </div>
 
-    <div class="svc-teaser-grid">
+    <div class="mob-car-outer" id="svcCarOuter">
+      <button class="mob-car-arrow mob-car-prev" aria-label="Previous service">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="mob-car-vp">
+        <div class="svc-teaser-grid" id="svcTeaserTrack">
 
       <div class="svc-teaser-card rev">
         <div class="svc-icon">
@@ -516,7 +613,13 @@
         <a href="services.html#cpst" class="arr-link">Learn more</a>
       </div>
 
-    </div>
+        </div><!-- /svc-teaser-grid -->
+      </div><!-- /mob-car-vp -->
+      <button class="mob-car-arrow mob-car-next" aria-label="Next service">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div><!-- /svcCarOuter -->
+    <div class="mob-car-dots" id="svcTeaserDots"></div>
 
     <div class="svc-all-row">
       <a href="services.html" class="btn btn-sage">View All Services</a>
@@ -531,7 +634,12 @@
       <span class="lbl">Client Voices</span>
       <h2 class="h2">What Families Say</h2>
     </div>
-    <div class="test-grid">
+    <div class="mob-car-outer" id="tstCarOuter">
+      <button class="mob-car-arrow mob-car-prev" aria-label="Previous testimonial">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="mob-car-vp">
+        <div class="test-grid" id="tstTrack">
       <div class="test-card rev">
         <blockquote>"Tonya was always available through text or phone when I needed her. She made me feel supported every step of the way."</blockquote>
         <cite>Anna P.</cite>
@@ -544,7 +652,13 @@
         <blockquote>"Having someone knowledgeable and calm made a stressful situation feel much more manageable. She truly goes above and beyond."</blockquote>
         <cite>Bethany D.</cite>
       </div>
-    </div>
+        </div><!-- /test-grid -->
+      </div><!-- /mob-car-vp -->
+      <button class="mob-car-arrow mob-car-next" aria-label="Next testimonial">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div><!-- /tstCarOuter -->
+    <div class="mob-car-dots" id="tstDots"></div>
   </div>
 </section>
 
@@ -613,6 +727,66 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.rev').forEach(el => io.observe(el));
+
+  // Mobile-only carousels (< 768px)
+  (function () {
+    if (window.innerWidth >= 768) return;
+
+    function initCar(track, dotsEl, prevBtn, nextBtn) {
+      const items = Array.from(track.children);
+      let cur = 0;
+
+      // Reveal all cards immediately — bypass scroll animation
+      items.forEach(el => el.classList.add('in'));
+
+      // Build dot buttons
+      function buildDots() {
+        dotsEl.innerHTML = '';
+        items.forEach((_, i) => {
+          const btn = document.createElement('button');
+          btn.className = 'mob-dot' + (i === 0 ? ' active' : '');
+          btn.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+          btn.addEventListener('click', () => goTo(i));
+          dotsEl.appendChild(btn);
+        });
+      }
+
+      function goTo(idx) {
+        cur = ((idx % items.length) + items.length) % items.length;
+        track.style.transform = 'translateX(-' + (cur * items[0].offsetWidth) + 'px)';
+        Array.from(dotsEl.children).forEach((d, i) => d.classList.toggle('active', i === cur));
+      }
+
+      prevBtn.addEventListener('click', () => goTo(cur - 1));
+      nextBtn.addEventListener('click', () => goTo(cur + 1));
+
+      // Touch swipe
+      let startX = 0;
+      const vp = track.parentElement;
+      vp.addEventListener('touchstart', e => { startX = e.changedTouches[0].clientX; }, { passive: true });
+      vp.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) goTo(dx < 0 ? cur + 1 : cur - 1);
+      }, { passive: true });
+
+      buildDots();
+      goTo(0);
+    }
+
+    // Services carousel
+    const svcTrack = document.getElementById('svcTeaserTrack');
+    const svcDots  = document.getElementById('svcTeaserDots');
+    const svcPrev  = document.querySelector('#svcCarOuter .mob-car-prev');
+    const svcNext  = document.querySelector('#svcCarOuter .mob-car-next');
+    if (svcTrack) initCar(svcTrack, svcDots, svcPrev, svcNext);
+
+    // Testimonials carousel
+    const tstTrack = document.getElementById('tstTrack');
+    const tstDots  = document.getElementById('tstDots');
+    const tstPrev  = document.querySelector('#tstCarOuter .mob-car-prev');
+    const tstNext  = document.querySelector('#tstCarOuter .mob-car-next');
+    if (tstTrack) initCar(tstTrack, tstDots, tstPrev, tstNext);
+  })();
 </script>
 </body>
 </html>
