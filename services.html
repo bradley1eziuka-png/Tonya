@@ -200,6 +200,20 @@
       background: var(--sage);
       width: 24px;
     }
+
+    /* === MOBILE CARD SIMPLIFICATION (matches 1-up carousel breakpoint) === */
+    .mob-desc { display: none; }
+    @media (max-width: 639px) {
+      .mob-desc {
+        display: block;
+        font-size: 0.925rem;
+        color: var(--mid);
+        line-height: 1.65;
+        margin-bottom: 0;
+      }
+      .desk-desc,
+      .svc-includes { display: none !important; }
+    }
   </style>
 </head>
 <body class="page-wrap" data-page="services.html">
@@ -265,8 +279,9 @@
                 <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
               </div>
               <h2>High-Risk Birth Support</h2>
-              <p>A complex pregnancy means navigating terminology, systems, and fear all at once. I provide continuous, trauma-informed support so you feel informed and advocated for at every step.</p>
-              <p>Conditions I frequently support include hypertension, preeclampsia, diabetes, preterm risk, multiples, previous loss, placental concerns, VBAC, and cesarean births.</p>
+              <p class="mob-desc">Continuous, trauma-informed support for complex pregnancies — hypertension, preeclampsia, multiples, previous loss, VBAC, and more.</p>
+              <p class="desk-desc">A complex pregnancy means navigating terminology, systems, and fear all at once. I provide continuous, trauma-informed support so you feel informed and advocated for at every step.</p>
+              <p class="desk-desc">Conditions I frequently support include hypertension, preeclampsia, diabetes, preterm risk, multiples, previous loss, placental concerns, VBAC, and cesarean births.</p>
               <div class="svc-includes">
                 <h4>Includes</h4>
                 <ul>
@@ -292,8 +307,9 @@
                 <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               </div>
               <h2>Postpartum Support</h2>
-              <p>Your body and mind need care long after the hospital sends you home. Whether your fourth trimester brings joy, challenge, or grief, I help you build the village around you.</p>
-              <p>Postpartum care is flexible and tailored to what you actually need, not a one-size-fits-all visit count.</p>
+              <p class="mob-desc">Flexible fourth-trimester care including newborn guidance, lactation support, household help, and emotional wellness check-ins.</p>
+              <p class="desk-desc">Your body and mind need care long after the hospital sends you home. Whether your fourth trimester brings joy, challenge, or grief, I help you build the village around you.</p>
+              <p class="desk-desc">Postpartum care is flexible and tailored to what you actually need, not a one-size-fits-all visit count.</p>
               <div class="svc-includes">
                 <h4>May include</h4>
                 <ul>
@@ -319,8 +335,9 @@
                 <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
               </div>
               <h2>Bereavement &amp; Loss Support</h2>
-              <p>Few experiences run as deep as the loss of a baby or pregnancy. I offer a grounded, trauma-informed presence through miscarriage, stillbirth, or infant loss, and in the weeks that follow.</p>
-              <p>Your body deserves care, even in grief.</p>
+              <p class="mob-desc">Grounded, trauma-informed presence through miscarriage, stillbirth, or infant loss, with follow-up care in the weeks that follow.</p>
+              <p class="desk-desc">Few experiences run as deep as the loss of a baby or pregnancy. I offer a grounded, trauma-informed presence through miscarriage, stillbirth, or infant loss, and in the weeks that follow.</p>
+              <p class="desk-desc">Your body deserves care, even in grief.</p>
               <div class="svc-includes">
                 <h4>Includes</h4>
                 <ul>
@@ -346,8 +363,9 @@
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
               </div>
               <h2>Lactation Specialist</h2>
-              <p>No matter how you choose to feed your baby, you deserve calm, judgment-free support. I help you establish rhythms, build confidence, and troubleshoot the challenges no one warned you about.</p>
-              <p>Breastfeeding, formula feeding, combination feeding, all feeding journeys are welcome here.</p>
+              <p class="mob-desc">Calm, judgment-free support for any feeding journey — breastfeeding, formula, or combination.</p>
+              <p class="desk-desc">No matter how you choose to feed your baby, you deserve calm, judgment-free support. I help you establish rhythms, build confidence, and troubleshoot the challenges no one warned you about.</p>
+              <p class="desk-desc">Breastfeeding, formula feeding, combination feeding, all feeding journeys are welcome here.</p>
               <div class="svc-includes">
                 <h4>Support includes</h4>
                 <ul>
@@ -372,8 +390,9 @@
                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
               </div>
               <h2>Birth Plan Education</h2>
-              <p>Build a calm, confident birth plan with evidence-based guidance. We cover birth options, pain management preferences, emergency planning, and how to advocate for yourself in any birth setting.</p>
-              <p>You leave the session knowing your options and able to communicate them clearly with your care team.</p>
+              <p class="mob-desc">Evidence-based guidance to build a confident birth plan and learn how to advocate for yourself in any birth setting.</p>
+              <p class="desk-desc">Build a calm, confident birth plan with evidence-based guidance. We cover birth options, pain management preferences, emergency planning, and how to advocate for yourself in any birth setting.</p>
+              <p class="desk-desc">You leave the session knowing your options and able to communicate them clearly with your care team.</p>
               <div class="svc-includes">
                 <h4>We cover</h4>
                 <ul>
@@ -398,7 +417,8 @@
                 <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
               </div>
               <h2>Overnight Nourish &amp; Support</h2>
-              <p>Rest is essential for healing, especially during the first 40 nights after birth. I provide overnight newborn care so you can sleep deeply and wake up to a detailed report.</p>
+              <p class="mob-desc">Dedicated 8-hour overnight newborn care so you sleep deeply and wake to a detailed morning report.</p>
+              <p class="desk-desc">Rest is essential for healing, especially during the first 40 nights after birth. I provide overnight newborn care so you can sleep deeply and wake up to a detailed report.</p>
               <div class="svc-includes">
                 <h4>During each overnight shift</h4>
                 <ul>
@@ -420,7 +440,8 @@
                 <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
               <h2>Child Passenger Safety (CPST)</h2>
-              <p>As a certified Child Passenger Safety Technician, I make sure your car seat is installed correctly and your baby travels safely from day one. This is not a checkbox — an incorrectly installed car seat is one of the most common and preventable safety issues for newborns.</p>
+              <p class="mob-desc">Certified car seat inspection and installation ensuring your baby travels safely from the very first ride.</p>
+              <p class="desk-desc">As a certified Child Passenger Safety Technician, I make sure your car seat is installed correctly and your baby travels safely from day one. This is not a checkbox — an incorrectly installed car seat is one of the most common and preventable safety issues for newborns.</p>
               <span class="free-pill">FREE with every package</span>
               <div class="svc-includes">
                 <h4>Includes</h4>
@@ -442,7 +463,8 @@
                 <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
               </div>
               <h2>Safe Sleep Ambassador</h2>
-              <p>As a certified Safe Sleep Ambassador, I educate families on evidence-based safe sleep guidelines, reducing the risk of SIDS and sleep-related infant death. You deserve a sleep environment you can feel fully confident about.</p>
+              <p class="mob-desc">Evidence-based safe sleep education to reduce SIDS risk and build a sleep environment you feel fully confident about.</p>
+              <p class="desk-desc">As a certified Safe Sleep Ambassador, I educate families on evidence-based safe sleep guidelines, reducing the risk of SIDS and sleep-related infant death. You deserve a sleep environment you can feel fully confident about.</p>
               <div class="svc-includes">
                 <h4>We cover</h4>
                 <ul>
