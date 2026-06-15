@@ -36,8 +36,9 @@
       display: flex; align-items: center; justify-content: center;
     }
     .ci-icon svg { width: 20px; height: 20px; stroke: var(--sage-dk); fill: none; stroke-width: 1.75; }
+    .ci-text { min-width: 0; }
     .ci-text strong { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
-    .ci-text a, .ci-text p { font-size: 1.025rem; color: var(--dark); line-height: 1.5; margin: 0; }
+    .ci-text a, .ci-text p { font-size: 1.025rem; color: var(--dark); line-height: 1.5; margin: 0; word-break: break-word; overflow-wrap: anywhere; }
     .ci-text a { text-decoration: none; }
     .ci-text a:hover { color: var(--sage-dk); }
 
