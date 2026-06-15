@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Bump to Baby Doula Services</title>
+  <meta name="description" content="High-risk birth support, postpartum care, bereavement, lactation, overnight support, CPST, and Safe Sleep Ambassador services in Jackson, MI.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* === CAROUSEL WRAPPER === */
+    .svc-carousel-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+    }
+    .svc-carousel {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+    }
+    .svc-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+
+    /* === CARDS === */
+    .svc-card {
+      /* Desktop: 3 visible — (100% − 2 gaps of 1.5rem) ÷ 3 */
+      flex: 0 0 calc((100% - 3rem) / 3);
+      min-width: 0;
+      background: var(--white);
+      border: 1px solid var(--cream-dk);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .svc-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(44, 36, 22, 0.09);
+    }
+    .svc-card.new-card { border-color: var(--sage-lt); }
+
+    @media (max-width: 639px) {
+      .svc-card { flex: 0 0 100%; }
+      .svc-carousel-wrap { gap: 0.5rem; }
+    }
+
+    /* === CARD PHOTO === */
+    .svc-card-photo {
+      height: 220px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .svc-card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* === CARD BODY === */
+    .svc-card-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    /* === ICON === */
+    .svc-icon {
+      width: 52px; height: 52px; border-radius: 13px;
+      background: var(--sage-pale);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+      flex-shrink: 0;
+    }
+    .svc-icon svg {
+      width: 24px; height: 24px;
+      stroke: var(--sage-dk); fill: none; stroke-width: 1.75;
+    }
+
+    /* === CARD TEXT === */
+    .svc-card h2 {
+      font-size: 1.25rem; font-weight: 500; margin-bottom: 0.75rem;
+    }
+    .svc-card p {
+      font-size: 0.925rem; color: var(--mid); line-height: 1.7; margin-bottom: 0.875rem;
+    }
+    .svc-card p:last-of-type { margin-bottom: 0; }
+
+    .svc-includes {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--cream-dk);
+    }
+    .svc-includes h4 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 0.625rem;
+    }
+    .svc-includes ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+    .svc-includes li {
+      font-size: 0.88rem; color: var(--mid);
+      padding-left: 1rem; position: relative;
+    }
+    .svc-includes li::before {
+      content: ''; position: absolute; left: 0; top: 9px;
+      width: 5px; height: 5px; border-radius: 50%; background: var(--sage);
+    }
+
+    /* === NEW TAG (inline flow, not absolute) === */
+    .new-tag {
+      display: inline-block;
+      margin-bottom: 1rem;
+      background: var(--sage); color: var(--white);
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.22rem 0.6rem; border-radius: 100px;
+    }
+
+    /* === FREE PILL === */
+    .free-pill {
+      display: inline-block;
+      margin-top: 0.875rem;
+      background: var(--rose-pale);
+      color: var(--mid);
+      border: 1px solid var(--rose);
+      border-radius: 100px;
+      font-size: 0.75rem; font-weight: 700;
+      padding: 0.25rem 0.75rem;
+    }
+
+    /* === LEARN MORE LINK === */
+    .svc-learn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: auto;
+      padding-top: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--sage-dk);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: gap 0.2s, color 0.2s;
+    }
+    .svc-learn:hover { gap: 0.55rem; color: var(--sage); }
+
+    /* === ARROW BUTTONS === */
+    .car-btn {
+      flex: 0 0 48px;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      border: 1.5px solid var(--cream-dk);
+      background: var(--white);
+      color: var(--dark);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      padding: 0;
+      flex-shrink: 0;
+    }
+    .car-btn:hover {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      transform: scale(1.06);
+    }
+    .car-btn svg {
+      width: 20px; height: 20px;
+      stroke: currentColor; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* === DOT INDICATORS === */
+    .car-dots-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.75rem;
+    }
+    .car-dots {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .car-dot {
+      width: 8px; height: 8px;
+      border-radius: 100px;
+      border: none;
+      background: var(--cream-dk);
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.25s, width 0.25s;
+    }
+    .car-dot.active {
+      background: var(--sage);
+      width: 24px;
+    }
+  </style>
+</head>
+<body class="page-wrap" data-page="services.html">
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="Brand Assets/Logo.png" alt="Bump to Baby Doula Services">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="packages.html">Packages &amp; Pricing</a></li>
+    <li><a href="faq.html">FAQs</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta-btn">Free Consultation</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="packages.html">Packages &amp; Pricing</a>
+  <a href="faq.html">FAQs</a>
+  <a href="resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mob-cta">Book Free Consultation</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-in">
+    <span class="lbl">What I Offer</span>
+    <h1>Services</h1>
+    <p>Support for every stage of your journey, from high-risk pregnancy through the fourth trimester, loss, and beyond.</p>
+  </div>
+</div>
+
+<section>
+  <div class="inner">
+
+    <div class="svc-carousel-wrap">
+
+      <!-- Previous arrow -->
+      <button class="car-btn car-prev" aria-label="Previous service">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+
+      <!-- Carousel viewport -->
+      <div class="svc-carousel" id="svcCarousel" role="region" aria-label="Services carousel">
+        <div class="svc-track" id="svcTrack">
+
+          <!-- 1: High-Risk Birth Support -->
+          <div class="svc-card" id="high-risk" role="group" aria-label="High-Risk Birth Support">
+            <div class="svc-card-photo">
+              <img src="High risk Support.png" alt="High-Risk Birth Support">
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              </div>
+              <h2>High-Risk Birth Support</h2>
+              <p>A complex pregnancy means navigating terminology, systems, and fear all at once. I provide continuous, trauma-informed support so you feel informed and advocated for at every step.</p>
+              <p>Conditions I frequently support include hypertension, preeclampsia, diabetes, preterm risk, multiples, previous loss, placental concerns, VBAC, and cesarean births.</p>
+              <div class="svc-includes">
+                <h4>Includes</h4>
+                <ul>
+                  <li>Comprehensive initial consultation and health history review</li>
+                  <li>Two prenatal visits for birth planning and education</li>
+                  <li>Continuous labor and delivery support (vaginal, VBAC, or cesarean)</li>
+                  <li>Up to 10 postpartum daytime visits (40 hours)</li>
+                  <li>Unlimited text support throughout pregnancy and postpartum</li>
+                  <li>Overnight care available as add-on</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="svc-learn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 2: Postpartum Support -->
+          <div class="svc-card" id="postpartum" role="group" aria-label="Postpartum Support">
+            <div class="svc-card-photo">
+              <img src="Post partum support.png" alt="Postpartum Support">
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <h2>Postpartum Support</h2>
+              <p>Your body and mind need care long after the hospital sends you home. Whether your fourth trimester brings joy, challenge, or grief, I help you build the village around you.</p>
+              <p>Postpartum care is flexible and tailored to what you actually need, not a one-size-fits-all visit count.</p>
+              <div class="svc-includes">
+                <h4>May include</h4>
+                <ul>
+                  <li>Newborn guidance and care education</li>
+                  <li>Lactation support and feeding troubleshooting</li>
+                  <li>Light household assistance</li>
+                  <li>Emotional wellness check-ins</li>
+                  <li>Partner and family support</li>
+                  <li>Referrals to community resources</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="svc-learn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 3: Bereavement & Loss Support -->
+          <div class="svc-card" id="bereavement" role="group" aria-label="Bereavement and Loss Support">
+            <div class="svc-card-photo">
+              <img src="Bereave.png" alt="Bereavement and Loss Support">
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-icon">
+                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <h2>Bereavement &amp; Loss Support</h2>
+              <p>Few experiences run as deep as the loss of a baby or pregnancy. I offer a grounded, trauma-informed presence through miscarriage, stillbirth, or infant loss, and in the weeks that follow.</p>
+              <p>Your body deserves care, even in grief.</p>
+              <div class="svc-includes">
+                <h4>Includes</h4>
+                <ul>
+                  <li>Calm, reliable presence during labor and delivery</li>
+                  <li>Memory-making and bonding opportunities</li>
+                  <li>Postpartum physical recovery guidance</li>
+                  <li>Partner and family support</li>
+                  <li>Follow-up visits during the grieving process</li>
+                  <li>Unlimited text support</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="svc-learn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 4: Lactation Specialist -->
+          <div class="svc-card" id="lactation" role="group" aria-label="Lactation Specialist">
+            <div class="svc-card-photo">
+              <img src="Lactation and feeding.png" alt="Lactation Specialist">
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              </div>
+              <h2>Lactation Specialist</h2>
+              <p>No matter how you choose to feed your baby, you deserve calm, judgment-free support. I help you establish rhythms, build confidence, and troubleshoot the challenges no one warned you about.</p>
+              <p>Breastfeeding, formula feeding, combination feeding, all feeding journeys are welcome here.</p>
+              <div class="svc-includes">
+                <h4>Support includes</h4>
+                <ul>
+                  <li>Latch support and positioning</li>
+                  <li>Supply concerns and pumping guidance</li>
+                  <li>Formula preparation and feeding schedules</li>
+                  <li>Weaning support</li>
+                  <li>Referrals to IBCLC when needed</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="svc-learn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 5: Birth Plan Education -->
+          <div class="svc-card" id="birth-plan" role="group" aria-label="Birth Plan Education">
+            <div class="svc-card-photo">
+              <img src="Birth planning.png" alt="Birth Plan Education">
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <h2>Birth Plan Education</h2>
+              <p>Build a calm, confident birth plan with evidence-based guidance. We cover birth options, pain management preferences, emergency planning, and how to advocate for yourself in any birth setting.</p>
+              <p>You leave the session knowing your options and able to communicate them clearly with your care team.</p>
+              <div class="svc-includes">
+                <h4>We cover</h4>
+                <ul>
+                  <li>Birth setting options (hospital, birth center, home)</li>
+                  <li>Pain management preferences</li>
+                  <li>Interventions and your right to informed consent</li>
+                  <li>Cesarean planning if relevant</li>
+                  <li>Immediate postpartum preferences (skin-to-skin, cord clamping, etc.)</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="svc-learn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 6: Overnight Support -->
+          <div class="svc-card" id="overnight" role="group" aria-label="Overnight Nourish and Support">
+            <div class="svc-card-photo">
+              <img src="Overnight support.png" alt="Overnight Support">
+            </div>
+            <div class="svc-card-body">
+              <div class="svc-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              </div>
+              <h2>Overnight Nourish &amp; Support</h2>
+              <p>Rest is essential for healing, especially during the first 40 nights after birth. I provide overnight newborn care so you can sleep deeply and wake up to a detailed report.</p>
+              <div class="svc-includes">
+                <h4>During each overnight shift</h4>
+                <ul>
+                  <li>All feedings and soothing (8-hour block)</li>
+                  <li>Light household reset</li>
+                  <li>Detailed overnight report</li>
+                  <li>Morning handoff briefing</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="svc-learn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 7: CPST (no photo) -->
+          <div class="svc-card new-card" id="cpst" role="group" aria-label="Child Passenger Safety">
+            <div class="svc-card-body">
+              <span class="new-tag">New</span>
+              <div class="svc-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h2>Child Passenger Safety (CPST)</h2>
+              <p>As a certified Child Passenger Safety Technician, I make sure your car seat is installed correctly and your baby travels safely from day one. This is not a checkbox — an incorrectly installed car seat is one of the most common and preventable safety issues for newborns.</p>
+              <span class="free-pill">FREE with every package</span>
+              <div class="svc-includes">
+                <h4>Includes</h4>
+                <ul>
+                  <li>Full car seat inspection and installation</li>
+                  <li>Education on proper use and common mistakes</li>
+                  <li>Guidance on when to transition to the next seat stage</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="svc-learn">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- 8: Safe Sleep Ambassador (no photo) -->
+          <div class="svc-card new-card" id="safe-sleep" role="group" aria-label="Safe Sleep Ambassador">
+            <div class="svc-card-body">
+              <span class="new-tag">New</span>
+              <div class="svc-icon">
+                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <h2>Safe Sleep Ambassador</h2>
+              <p>As a certified Safe Sleep Ambassador, I educate families on evidence-based safe sleep guidelines, reducing the risk of SIDS and sleep-related infant death. You deserve a sleep environment you can feel fully confident about.</p>
+              <div class="svc-includes">
+                <h4>We cover</h4>
+                <ul>
+                  <li>The ABCs of safe sleep (Alone, Back, Crib)</li>
+                  <li>Safe sleep environment setup</li>
+                  <li>Common myths and misconceptions</li>
+                  <li>Room-sharing vs. bed-sharing guidance</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="svc-learn">Learn More →</a>
+            </div>
+          </div>
+
+        </div><!-- /svc-track -->
+      </div><!-- /svc-carousel -->
+
+      <!-- Next arrow -->
+      <button class="car-btn car-next" aria-label="Next service">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+    </div><!-- /svc-carousel-wrap -->
+
+    <!-- Dot indicators -->
+    <div class="car-dots-wrap">
+      <div class="car-dots" id="carDots" role="tablist" aria-label="Service navigation"></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Not sure which service is right for you?</h2>
+  <p>Let's talk. A free consultation is the best place to start.</p>
+  <a href="contact.html" class="btn btn-white">Book Free Consultation</a>
+</div>
+
+<footer>
+  <div class="footer-in">
+    <div class="footer-top">
+      <div class="f-brand">
+        <img src="Brand Assets/Logo.png" alt="Bump to Baby Doula Services">
+        <p>Certified High-Risk Doula serving Jackson, MI and surrounding communities.</p>
+      </div>
+      <div class="f-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="packages.html">Packages &amp; Pricing</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="tel:5174949441">(517) 494-9441</a></li>
+          <li><a href="mailto:bumpbabydoulaservices@gmail.com">Email Tonya</a></li>
+          <li><a href="contact.html">Free Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2025 Bump to Baby Doula Services LLC. All rights reserved.</p>
+      <p>Jackson, MI · (517) 494-9441</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── Nav ── */
+  function toggleMenu() { document.getElementById('mob').classList.toggle('open'); }
+  document.addEventListener('click', function(e) {
+    const mob = document.getElementById('mob');
+    if (mob.classList.contains('open') && !mob.contains(e.target) && !e.target.closest('.hamburger')) mob.classList.remove('open');
+  });
+  const page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(a) {
+    if (a.getAttribute('href') === page) a.classList.add('active');
+  });
+
+  /* ── Carousel ── */
+  (function() {
+    const track   = document.getElementById('svcTrack');
+    const dotsEl  = document.getElementById('carDots');
+    const viewport = document.getElementById('svcCarousel');
+    if (!track) return;
+
+    const cards = Array.from(track.children);
+    let current = 0;
+    let timer;
+
+    function visCount() { return window.innerWidth >= 640 ? 3 : 1; }
+    function maxIdx()   { return Math.max(0, cards.length - visCount()); }
+
+    function cardGap() {
+      return parseFloat(getComputedStyle(track).columnGap) || 24;
+    }
+
+    function buildDots() {
+      const count = maxIdx() + 1;
+      dotsEl.innerHTML = '';
+      for (var i = 0; i < count; i++) {
+        (function(idx) {
+          var btn = document.createElement('button');
+          btn.className = 'car-dot' + (idx === current ? ' active' : '');
+          btn.setAttribute('aria-label', 'Go to slide ' + (idx + 1));
+          btn.setAttribute('role', 'tab');
+          btn.addEventListener('click', function() { goTo(idx); startAuto(); });
+          dotsEl.appendChild(btn);
+        })(i);
+      }
+    }
+
+    function updateDots() {
+      Array.from(dotsEl.children).forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+        d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+      });
+    }
+
+    function goTo(idx) {
+      var max = maxIdx();
+      current = Math.max(0, Math.min(idx, max));
+      var offset = current * (cards[0].offsetWidth + cardGap());
+      track.style.transform = 'translateX(-' + offset + 'px)';
+      updateDots();
+    }
+
+    function next() { goTo(current >= maxIdx() ? 0 : current + 1); }
+    function prev() { goTo(current <= 0 ? maxIdx() : current - 1); }
+
+    function startAuto() {
+      clearInterval(timer);
+      timer = setInterval(next, 5000);
+    }
+    function stopAuto() { clearInterval(timer); }
+
+    document.querySelector('.car-prev').addEventListener('click', function() { prev(); startAuto(); });
+    document.querySelector('.car-next').addEventListener('click', function() { next(); startAuto(); });
+
+    viewport.addEventListener('mouseenter', stopAuto);
+    viewport.addEventListener('mouseleave', startAuto);
+
+    /* Touch swipe support */
+    var touchStartX = 0;
+    viewport.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    viewport.addEventListener('touchend', function(e) {
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); startAuto(); }
+    }, { passive: true });
+
+    /* Rebuild on resize */
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        current = Math.min(current, maxIdx());
+        buildDots();
+        goTo(current);
+      }, 150);
+    });
+
+    buildDots();
+    goTo(0);
+    startAuto();
+  })();
+</script>
+</body>
+</html>

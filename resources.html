@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources | Bump to Baby Doula Services</title>
+  <meta name="description" content="Curated Michigan resources for pregnancy, breastfeeding, financial assistance, bereavement, and NICU support, from Bump to Baby Doula Services.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .res-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 600px) { .res-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 960px) { .res-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+    .res-card {
+      background: var(--white);
+      border: 1.5px solid var(--cream-dk);
+      border-radius: 16px;
+      padding: 1.625rem;
+    }
+    .res-cat {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage-dk);
+      margin-bottom: 0.5rem;
+    }
+    .res-card h2 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+    }
+    .res-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .res-card ul li {
+      font-size: 0.95rem;
+      color: var(--mid);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    .res-card ul li::before {
+      content: '';
+      position: absolute; left: 0; top: 9px;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--sage-lt);
+    }
+
+    .res-note {
+      background: var(--sage-pale);
+      border: 1.5px solid var(--sage-lt);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.975rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+    .res-note strong { color: var(--dark); }
+  </style>
+</head>
+<body class="page-wrap" data-page="resources.html">
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="Brand Assets/Logo.png" alt="Bump to Baby Doula Services">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="packages.html">Packages &amp; Pricing</a></li>
+    <li><a href="faq.html">FAQs</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta-btn">Free Consultation</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="packages.html">Packages &amp; Pricing</a>
+  <a href="faq.html">FAQs</a>
+  <a href="resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mob-cta">Book Free Consultation</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-in">
+    <span class="lbl">Community Support</span>
+    <h1>Resources for Families</h1>
+    <p>A curated list of Michigan resources I trust and refer families to regularly, from pregnancy support to grief care.</p>
+  </div>
+</div>
+
+<section>
+  <div class="inner">
+    <div class="res-note">
+      <strong>A note from Tonya:</strong> These are organizations and programs I personally vet and refer clients to. If you need help navigating any of these resources or aren't sure where to start, reach out, connecting families to the right support is part of what I do.
+    </div>
+
+    <div class="res-grid">
+
+      <div class="res-card rev">
+        <div class="res-cat">Pregnancy &amp; Parenting Education</div>
+        <h2>Support &amp; Education</h2>
+        <ul>
+          <li>Center for Women</li>
+          <li>Birthline Pregnancy &amp; Parenting Center</li>
+          <li>Jackson Baby Pantry</li>
+          <li>Helping Hands</li>
+          <li>SP Women's Center</li>
+        </ul>
+      </div>
+
+      <div class="res-card rev d1">
+        <div class="res-cat">Breastfeeding</div>
+        <h2>Lactation Support</h2>
+        <ul>
+          <li>Henry Ford Jackson Health Milk Bank</li>
+          <li>La Leche League</li>
+          <li>Yummy Mummy (insurance-billable breast pumps)</li>
+          <li>Bronson Mother's Milk Bank</li>
+        </ul>
+      </div>
+
+      <div class="res-card rev d2">
+        <div class="res-cat">Financial &amp; Nutritional</div>
+        <h2>Financial Assistance</h2>
+        <ul>
+          <li>MiBridges (Medicaid coverage)</li>
+          <li>Michigan WIC Program</li>
+          <li>TANF Cash Assistance</li>
+          <li>Rx Kids (pregnancy &amp; baby financial aid)</li>
+        </ul>
+      </div>
+
+      <div class="res-card rev">
+        <div class="res-cat">Loss &amp; Grief</div>
+        <h2>Bereavement Support</h2>
+        <ul>
+          <li>MC3 Counseling</li>
+          <li>The TEARS Foundation</li>
+          <li>Crossroads Care Center (monthly support groups)</li>
+          <li>First Candle (stillbirth / miscarriage resources)</li>
+        </ul>
+      </div>
+
+      <div class="res-card rev d1">
+        <div class="res-cat">Family Planning</div>
+        <h2>Family Options</h2>
+        <ul>
+          <li>American Adoptions</li>
+          <li>Adoption Associates</li>
+          <li>LAS Adoption Services</li>
+          <li>National Maternal Mental Health Hotline</li>
+        </ul>
+      </div>
+
+      <div class="res-card rev d2">
+        <div class="res-cat">Specialized Care</div>
+        <h2>NICU &amp; High-Risk</h2>
+        <ul>
+          <li>March of Dimes NICU Support</li>
+          <li>March of Dimes NICU Education</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Need help finding the right resource?</h2>
+  <p>Reach out and I'll point you in the right direction, that's what I'm here for.</p>
+  <a href="contact.html" class="btn btn-white">Get in Touch</a>
+</div>
+
+<footer>
+  <div class="footer-in">
+    <div class="footer-top">
+      <div class="f-brand">
+        <img src="Brand Assets/Logo.png" alt="Bump to Baby Doula Services">
+        <p>Certified High-Risk Doula serving Jackson, MI and surrounding communities.</p>
+      </div>
+      <div class="f-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="packages.html">Packages &amp; Pricing</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="tel:5174949441">(517) 494-9441</a></li>
+          <li><a href="mailto:bumpbabydoulaservices@gmail.com">Email Tonya</a></li>
+          <li><a href="contact.html">Free Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2025 Bump to Baby Doula Services LLC. All rights reserved.</p>
+      <p>Jackson, MI · (517) 494-9441</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mob').classList.toggle('open'); }
+  document.addEventListener('click', e => {
+    const mob = document.getElementById('mob');
+    if (mob.classList.contains('open') && !mob.contains(e.target) && !e.target.closest('.hamburger')) mob.classList.remove('open');
+  });
+  const page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
+    if (a.getAttribute('href') === page) a.classList.add('active');
+  });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.rev').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Tonya | Bump to Baby Doula Services</title>
+  <meta name="description" content="Meet Tonya, Certified Full Spectrum Doula, High-Risk specialist, and Perinatal Community Health Worker serving Jackson, MI.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (min-width: 768px) {
+      .about-grid { grid-template-columns: 5fr 7fr; gap: 4rem; }
+    }
+
+    .about-img-wrap { position: relative; }
+    .about-blob {
+      position: absolute; inset: -7%;
+      background: var(--sage-pale);
+      border-radius: 42% 58% 48% 52% / 50% 44% 56% 50%;
+      z-index: 0;
+    }
+    .about-img-wrap img {
+      position: relative; z-index: 1; width: 100%;
+      border-radius: 42% 58% 45% 55% / 46% 48% 52% 54%;
+      object-fit: cover; aspect-ratio: 4/5;
+    }
+    .about-cred-chip {
+      position: absolute; bottom: -0.5rem; right: -0.5rem; z-index: 2;
+      background: var(--white); border-radius: 12px;
+      padding: 0.875rem 1.125rem;
+      box-shadow: 0 8px 24px rgba(44,36,22,0.12);
+    }
+    .about-cred-chip strong { display: block; font-size: 1rem; color: var(--dark); }
+    .about-cred-chip span { font-size: 0.75rem; color: var(--muted); }
+
+    .about-text p { color: var(--mid); margin-bottom: 1.25rem; font-size: 1rem; }
+
+    .pull-quote {
+      background: var(--sage-pale);
+      border-left: 3px solid var(--sage);
+      border-radius: 0 10px 10px 0;
+      padding: 1.25rem 1.5rem; margin: 1.75rem 0;
+    }
+    .pull-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--dark); line-height: 1.55; margin: 0;
+    }
+
+    .chip-row { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.5rem; }
+    .chip {
+      background: var(--sage-pale); color: var(--sage-dk);
+      border: 1px solid var(--sage-lt);
+      border-radius: 100px; padding: 0.35rem 0.875rem;
+      font-size: 0.78rem; font-weight: 700;
+    }
+
+    .about-fun {
+      margin-top: 3rem;
+      background: var(--white);
+      border: 1px solid var(--cream-dk);
+      border-radius: 16px;
+      padding: 1.75rem;
+    }
+    .about-fun h3 { font-size: 1.3rem; font-weight: 500; margin-bottom: 0.625rem; }
+    .about-fun p { font-size: 0.95rem; color: var(--mid); }
+  </style>
+</head>
+<body class="page-wrap" data-page="about.html">
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="Brand Assets/Logo.png" alt="Bump to Baby Doula Services">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="packages.html">Packages &amp; Pricing</a></li>
+    <li><a href="faq.html">FAQs</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta-btn">Free Consultation</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="packages.html">Packages &amp; Pricing</a>
+  <a href="faq.html">FAQs</a>
+  <a href="resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mob-cta">Book Free Consultation</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-in">
+    <span class="lbl">Meet Your Doula</span>
+    <h1>Hi, I'm Tonya.</h1>
+    <p>Certified Full Spectrum Doula · High-Risk Specialist · Perinatal Community Health Worker</p>
+  </div>
+</div>
+
+<section>
+  <div class="inner">
+    <div class="about-grid">
+      <div class="about-img-wrap rev">
+        <div class="about-blob"></div>
+        <img src="hiii.png" alt="Tonya, Certified High-Risk Doula">
+        <div class="about-cred-chip">
+          <strong>16+ Years</strong>
+          <span>Medical Field Experience</span>
+        </div>
+      </div>
+
+      <div class="about-text rev" style="transition-delay:0.1s">
+        <span class="lbl">My Journey</span>
+        <h2 class="h2">Why I Became a Doula</h2>
+        <p>With more than 16 years of experience in the medical field and four years dedicated to Women's Health as a Perinatal Community Health Worker, I bring clinical knowledge alongside the kind of care that actually feels human.</p>
+        <p>I'm a mother to four living children and one angel baby. I carried twins. I brought home one. That experience shaped everything about how I show up for the families I serve, because I know exactly how fast families can feel left behind after hospital discharge.</p>
+        <p>What started as a deeply personal loss became my life's work. I've made it my mission to make sure no family in our community has to navigate the hardest moments alone.</p>
+
+        <div class="pull-quote">
+          <p>"Every family carries its own story and inner wisdom, and my role is to walk beside you with grounded presence, clear guidance, and compassion through every season of your journey."</p>
+        </div>
+
+        <span class="lbl">My Approach</span>
+        <p>I work with a limited number of clients at a time, intentionally. Every family I take on receives my full attention, my full availability, and care that is tailored to their specific journey. Not a template. Not a checklist.</p>
+        <p>As a Certified Full Spectrum Doula, I specialize in high-risk pregnancy, postpartum recovery, and bereavement support. My care is trauma-informed and evidence-based at every step.</p>
+
+        <div class="chip-row">
+          <span class="chip">Certified Full Spectrum Doula</span>
+          <span class="chip">High-Risk Certified</span>
+          <span class="chip">Perinatal Community Health Worker</span>
+          <span class="chip">Trauma-Informed Care</span>
+          <span class="chip">Safe Sleep Ambassador</span>
+          <span class="chip">CPST Certified</span>
+          <span class="chip">Bereavement Support</span>
+          <span class="chip">NICU Support (in progress)</span>
+        </div>
+
+        <div class="about-fun">
+          <h3>Outside of Birth Work</h3>
+          <p>When I'm not supporting families, you'll find me kayaking Michigan trails, following the NFL, or practicing the kind of stillness I try to bring into every birth room. Autumn and spring are my seasons. Nature is my reset.</p>
+        </div>
+
+        <div style="margin-top:2rem; display:flex; flex-wrap:wrap; gap:0.75rem;">
+          <a href="contact.html" class="btn btn-dark">Talk About Your Journey</a>
+          <a href="services.html" class="btn btn-outline">See My Services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Every journey begins with a conversation.</h2>
+  <p>Book a free consultation, no pressure, no obligation.</p>
+  <a href="contact.html" class="btn btn-white">Book Free Consultation</a>
+</div>
+
+<footer>
+  <div class="footer-in">
+    <div class="footer-top">
+      <div class="f-brand">
+        <img src="Brand Assets/Logo.png" alt="Bump to Baby Doula Services">
+        <p>Certified High-Risk Doula serving Jackson, MI and surrounding communities. Evidence-based, heart-centered support for every stage of your journey.</p>
+      </div>
+      <div class="f-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="packages.html">Packages &amp; Pricing</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="tel:5174949441">(517) 494-9441</a></li>
+          <li><a href="mailto:bumpbabydoulaservices@gmail.com">Email Tonya</a></li>
+          <li><a href="contact.html">Free Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2025 Bump to Baby Doula Services LLC. All rights reserved.</p>
+      <p>Jackson, MI · (517) 494-9441</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mob').classList.toggle('open'); }
+  document.addEventListener('click', e => {
+    const mob = document.getElementById('mob');
+    if (mob.classList.contains('open') && !mob.contains(e.target) && !e.target.closest('.hamburger')) mob.classList.remove('open');
+  });
+  const page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
+    if (a.getAttribute('href') === page) a.classList.add('active');
+  });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.rev').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

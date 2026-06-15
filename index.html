@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bump to Baby Doula Services | High-Risk Pregnancy Support | Jackson, MI</title>
+  <meta name="description" content="Certified High-Risk Doula in Jackson, MI. Trauma-informed birth, postpartum, bereavement & lactation support for every stage of your journey.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── HERO ─────────────────────────────────── */
+    #hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(150deg, var(--cream) 55%, #e0eae0 100%);
+    }
+
+    .hero-deco {
+      position: absolute;
+      top: -5%; right: -8%;
+      width: 50%; max-width: 480px;
+      opacity: 0.09; pointer-events: none;
+    }
+    .hero-deco-bl {
+      position: absolute;
+      bottom: 4%; left: 0;
+      width: 46%; max-width: 410px;
+      opacity: 0.13; pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1120px; margin: 0 auto;
+      padding: 2.5rem 1.25rem 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.75rem;
+      align-items: center;
+      width: 100%;
+    }
+    @media (min-width: 820px) {
+      .hero-inner {
+        grid-template-columns: 58fr 42fr;
+        padding: 3rem 2rem;
+      }
+    }
+
+    /* Credential pill */
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--rose-pale);
+      border: 1px solid var(--rose);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.25rem;
+    }
+    .hero-pill-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--rose);
+      flex-shrink: 0;
+    }
+
+    /* THE BIG HEADLINE */
+    .hero-h1 {
+      font-size: clamp(3.25rem, 11vw, 6rem);
+      font-weight: 600;
+      line-height: 1.05;
+      color: var(--dark);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--sage);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.125rem);
+      color: var(--mid);
+      line-height: 1.75;
+      max-width: 480px;
+      margin-bottom: 2rem;
+    }
+
+    /* CTA group */
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    @media (min-width: 480px) {
+      .hero-ctas { flex-direction: row; flex-wrap: wrap; }
+    }
+    .hero-ctas .btn { width: 100%; }
+    @media (min-width: 480px) {
+      .hero-ctas .btn { width: auto; }
+    }
+
+    /* Trust badges */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.625rem 1.25rem;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .trust-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--sage);
+      flex-shrink: 0;
+    }
+
+    /* Hero image side */
+    .hero-img-col {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-blob {
+      display: none;
+    }
+    .hero-img-col img {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 380px;
+      border-radius: 44% 56% 42% 58% / 52% 46% 54% 48%;
+      object-fit: cover;
+      object-position: center 12%;
+      aspect-ratio: 4/5;
+      display: block;
+    }
+    .hero-quote-card {
+      position: absolute;
+      bottom: 8%; left: 0;
+      z-index: 2;
+      background: var(--white);
+      border-radius: 14px;
+      padding: 0.875rem 1.125rem;
+      box-shadow: 0 8px 28px rgba(44,36,22,0.13);
+      max-width: 200px;
+    }
+    .hero-quote-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem; font-style: italic;
+      color: var(--dark); line-height: 1.4;
+    }
+    .hero-quote-card cite {
+      display: block;
+      font-size: 0.72rem; font-weight: 700;
+      color: var(--sage-dk); font-style: normal;
+      letter-spacing: 0.05em; margin-top: 0.4rem;
+    }
+
+    /* ── HI I'M TONYA ────────────────────────── */
+    #about-tonya {
+      background: #F0E4E1;
+      border-bottom: 1px solid #E2CECA;
+    }
+    .about-tonya-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (min-width: 768px) {
+      .about-tonya-grid { grid-template-columns: 5fr 7fr; gap: 4rem; }
+    }
+    .about-tonya-img-wrap { position: relative; }
+    .about-tonya-blob {
+      position: absolute; inset: -7%;
+      background: var(--sage-pale);
+      border-radius: 42% 58% 48% 52% / 50% 44% 56% 50%;
+      z-index: 0;
+    }
+    .about-tonya-img-wrap img {
+      position: relative; z-index: 1; width: 100%;
+      border-radius: 42% 58% 45% 55% / 46% 48% 52% 54%;
+      object-fit: cover; aspect-ratio: 4/5;
+    }
+    .about-tonya-cred-chip {
+      position: absolute; bottom: -0.5rem; right: -0.5rem; z-index: 2;
+      background: var(--white); border-radius: 12px;
+      padding: 0.875rem 1.125rem;
+      box-shadow: 0 8px 24px rgba(44,36,22,0.12);
+    }
+    .about-tonya-cred-chip strong { display: block; font-size: 1rem; color: var(--dark); }
+    .about-tonya-cred-chip span { font-size: 0.75rem; color: var(--muted); }
+    .about-tonya-text p { color: var(--mid); margin-bottom: 1.25rem; font-size: 1rem; line-height: 1.8; }
+    .about-tonya-pull {
+      background: var(--sage-pale);
+      border-left: 3px solid var(--sage);
+      border-radius: 0 10px 10px 0;
+      padding: 1.25rem 1.5rem; margin: 1.75rem 0;
+    }
+    .about-tonya-pull p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--dark); line-height: 1.55; margin: 0;
+    }
+    .about-tonya-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.5rem; }
+    .about-tonya-chip {
+      background: var(--sage-pale); color: var(--sage-dk);
+      border: 1px solid var(--sage-lt);
+      border-radius: 100px; padding: 0.35rem 0.875rem;
+      font-size: 0.78rem; font-weight: 700;
+    }
+    .about-tonya-fun {
+      margin-top: 2rem;
+      background: var(--white);
+      border: 1px solid #E2CECA;
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    .about-tonya-fun h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--dark); }
+    .about-tonya-fun p { font-size: 0.95rem; color: var(--mid); margin-bottom: 0; }
+
+    /* ── SERVICES TEASER ──────────────────────── */
+    #services-teaser { background: var(--cream); }
+
+    .svc-teaser-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 540px) {
+      .svc-teaser-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 900px) {
+      .svc-teaser-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .svc-teaser-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dk);
+      border-radius: 16px;
+      padding: 1.625rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .svc-teaser-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(44,36,22,0.08);
+    }
+    .svc-new-tag {
+      position: absolute; top: 1rem; right: 1rem;
+      background: var(--sage); color: #fff;
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.2rem 0.55rem; border-radius: 100px;
+    }
+    .svc-icon {
+      width: 44px; height: 44px;
+      background: var(--sage-pale);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .svc-icon svg {
+      width: 20px; height: 20px;
+      stroke: var(--sage-dk); fill: none; stroke-width: 1.75;
+    }
+    .svc-teaser-card h3 {
+      font-size: 1.15rem; font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .svc-teaser-card p {
+      font-size: 0.925rem;
+      color: var(--mid);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .svc-free-tag {
+      display: inline-block;
+      background: var(--rose-pale);
+      color: var(--mid);
+      border: 1px solid var(--rose);
+      border-radius: 100px;
+      font-size: 0.72rem; font-weight: 700;
+      padding: 0.2rem 0.65rem;
+      margin-bottom: 0.875rem;
+    }
+    .svc-all-row {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+  </style>
+</head>
+<body class="page-wrap" data-page="index.html">
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="Brand Assets/Logo.png" alt="Bump to Baby Doula Services">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="packages.html">Packages &amp; Pricing</a></li>
+    <li><a href="faq.html">FAQs</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta-btn">Free Consultation</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="packages.html">Packages &amp; Pricing</a>
+  <a href="faq.html">FAQs</a>
+  <a href="resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mob-cta">Book Free Consultation</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <svg class="hero-deco" viewBox="0 0 500 550" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M250 40 C370 70 440 180 415 295 C390 410 275 445 195 520 C115 595 40 565 25 455 C10 345 75 240 120 155 C165 70 130 10 250 40Z" fill="#7A9E7E"/>
+    <circle cx="355" cy="148" r="45" fill="#A8C5A0" opacity="0.55"/>
+    <circle cx="148" cy="370" r="28" fill="#A8C5A0" opacity="0.38"/>
+  </svg>
+
+  <svg class="hero-deco-bl" viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M55 75 C140 15 295 5 385 65 C475 125 460 255 375 320 C290 385 130 400 55 325 C-20 250 -30 135 55 75Z" fill="#7A9E7E"/>
+    <circle cx="320" cy="80" r="32" fill="#A8C5A0" opacity="0.5"/>
+    <circle cx="90" cy="310" r="20" fill="#FAF6EF" opacity="0.45"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div>
+      <div class="hero-pill">
+        <span class="hero-pill-dot"></span>
+        Certified High-Risk Doula · Jackson, MI
+      </div>
+
+      <h1 class="hero-h1">
+        You deserve<br>
+        support that<br>
+        <em>stays</em> with you
+      </h1>
+
+      <p class="hero-sub">
+        Evidence-based, heart-centered care for high-risk pregnancy, birth, postpartum, and loss. Serving families in Jackson, MI and surrounding communities.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="contact.html" class="btn btn-dark btn-hero">Book a Free Consultation</a>
+        <a href="services.html" class="btn btn-outline btn-hero">See All Services</a>
+      </div>
+
+      <div class="trust-row">
+        <span class="trust-item"><span class="trust-dot"></span>High-Risk Certified</span>
+        <span class="trust-item"><span class="trust-dot"></span>Trauma-Informed</span>
+        <span class="trust-item"><span class="trust-dot"></span>HSA / FSA Accepted</span>
+        <span class="trust-item"><span class="trust-dot"></span>Free CPST Included</span>
+      </div>
+    </div>
+
+    <div class="hero-img-col">
+      <div class="hero-blob"></div>
+      <img src="New hero.png" alt="Tonya, Bump to Baby Doula Services">
+      <div class="hero-quote-card">
+        <p>"Seriously one of the best things we invested in."</p>
+        <cite>Danielle S.</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HI I'M TONYA -->
+<section id="about-tonya">
+  <div class="inner">
+    <div class="about-tonya-grid">
+
+      <div class="about-tonya-img-wrap rev">
+        <div class="about-tonya-blob"></div>
+        <img src="hiii.png" alt="Tonya, Certified High-Risk Doula">
+        <div class="about-tonya-cred-chip">
+          <strong>16+ Years</strong>
+          <span>Medical Field Experience</span>
+        </div>
+      </div>
+
+      <div class="about-tonya-text rev" style="transition-delay:0.1s">
+        <span class="lbl">Meet Your Doula</span>
+        <h2 class="h2">Hi, I'm Tonya.</h2>
+
+        <p>With more than 16 years of experience in the medical field and four years dedicated to Women's Health as a Perinatal Community Health Worker, I bring clinical knowledge alongside the kind of care that actually feels human.</p>
+
+        <p>I'm a mother to four living children and one angel baby. I carried twins. I brought home one. That experience shaped everything about how I show up for the families I serve, because I know exactly how fast families can feel left behind after hospital discharge.</p>
+
+        <p>What started as a deeply personal loss became my life's work. I've made it my mission to make sure no family in our community has to navigate the hardest moments alone.</p>
+
+        <div class="about-tonya-pull">
+          <p>"Every family carries its own story and inner wisdom, and my role is to walk beside you with grounded presence, clear guidance, and compassion through every season of your journey."</p>
+        </div>
+
+        <span class="lbl">My Approach</span>
+        <p>I work with a limited number of clients at a time, intentionally. Every family I take on receives my full attention, my full availability, and care that is tailored to their specific journey. Not a template. Not a checklist.</p>
+
+        <p>As a Certified Full Spectrum Doula, I specialize in high-risk pregnancy, postpartum recovery, and bereavement support. My care is trauma-informed and evidence-based at every step.</p>
+
+        <div class="about-tonya-chips">
+          <span class="about-tonya-chip">Certified Full Spectrum Doula</span>
+          <span class="about-tonya-chip">High-Risk Certified</span>
+          <span class="about-tonya-chip">Perinatal Community Health Worker</span>
+          <span class="about-tonya-chip">Trauma-Informed Care</span>
+          <span class="about-tonya-chip">Safe Sleep Ambassador</span>
+          <span class="about-tonya-chip">CPST Certified</span>
+          <span class="about-tonya-chip">Bereavement Support</span>
+          <span class="about-tonya-chip">NICU Support (in progress)</span>
+        </div>
+
+        <div class="about-tonya-fun">
+          <h3>Outside of Birth Work</h3>
+          <p>When I'm not supporting families, you'll find me kayaking Michigan trails, following the NFL, or practicing the kind of stillness I try to bring into every birth room. Autumn and spring are my seasons. Nature is my reset.</p>
+        </div>
+
+        <div style="margin-top:1.75rem; display:flex; flex-wrap:wrap; gap:0.75rem;">
+          <a href="contact.html" class="btn btn-dark">Talk About Your Journey</a>
+          <a href="about.html" class="btn btn-outline" style="border:2px solid var(--dark);color:var(--dark);font-weight:700;">More About Tonya</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES TEASER -->
+<section id="services-teaser">
+  <div class="inner">
+    <div class="tc">
+      <span class="lbl">What I Offer</span>
+      <h2 class="h2">Support for Every Stage</h2>
+      <p class="sub">From high-risk pregnancy through the fourth trimester, loss, and beyond.</p>
+    </div>
+
+    <div class="svc-teaser-grid">
+
+      <div class="svc-teaser-card rev">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <h3>High-Risk Birth Support</h3>
+        <p>Continuous, trauma-informed care for complex pregnancies, hypertension, preeclampsia, preterm risk, multiples, previous loss, and more.</p>
+        <a href="services.html#high-risk" class="arr-link">Learn more</a>
+      </div>
+
+      <div class="svc-teaser-card rev d1">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Postpartum Support</h3>
+        <p>Newborn care, household help, and emotional recovery, building your fourth-trimester village for as long as you need it.</p>
+        <a href="services.html#postpartum" class="arr-link">Learn more</a>
+      </div>
+
+      <div class="svc-teaser-card rev d2">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Bereavement &amp; Loss Support</h3>
+        <p>Grounded, trauma-informed presence through pregnancy loss, stillbirth, or infant loss, including memory-making and follow-up care.</p>
+        <a href="services.html#bereavement" class="arr-link">Learn more</a>
+      </div>
+
+      <div class="svc-teaser-card rev">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3>Lactation Specialist</h3>
+        <p>Calm, judgment-free support for feeding however you choose, establishing rhythms, building confidence, troubleshooting challenges.</p>
+        <a href="services.html#lactation" class="arr-link">Learn more</a>
+      </div>
+
+      <div class="svc-teaser-card rev d1">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </div>
+        <h3>Overnight Support</h3>
+        <p>Dedicated overnight newborn care during the first 40 nights, so you actually sleep and wake up to a detailed report.</p>
+        <a href="services.html#overnight" class="arr-link">Learn more</a>
+      </div>
+
+      <div class="svc-teaser-card rev d2" style="border-color:var(--sage-lt);">
+        <span class="svc-new-tag">New</span>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Child Passenger Safety</h3>
+        <p>Certified CPST inspection and installation, making sure your car seat is correct from day one.</p>
+        <span class="svc-free-tag">FREE with every package</span><br>
+        <a href="services.html#cpst" class="arr-link">Learn more</a>
+      </div>
+
+    </div>
+
+    <div class="svc-all-row">
+      <a href="services.html" class="btn btn-sage">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials-section">
+  <div class="inner">
+    <div class="tc">
+      <span class="lbl">Client Voices</span>
+      <h2 class="h2">What Families Say</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card rev">
+        <blockquote>"Tonya was always available through text or phone when I needed her. She made me feel supported every step of the way."</blockquote>
+        <cite>Anna P.</cite>
+      </div>
+      <div class="test-card rev d1">
+        <blockquote>"She was seriously one of the best things we invested in. I can't imagine navigating the postpartum period without her."</blockquote>
+        <cite>Danielle S.</cite>
+      </div>
+      <div class="test-card rev d2">
+        <blockquote>"Having someone knowledgeable and calm made a stressful situation feel much more manageable. She truly goes above and beyond."</blockquote>
+        <cite>Bethany D.</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA BAND -->
+<div class="cta-band">
+  <h2>Ready to talk about your journey?</h2>
+  <p>Every conversation starts with listening. Book a free, no-obligation consultation today.</p>
+  <a href="contact.html" class="btn btn-cream btn-white">Book Free Consultation</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-in">
+    <div class="footer-top">
+      <div class="f-brand">
+        <img src="Brand Assets/Logo.png" alt="Bump to Baby Doula Services">
+        <p>Certified High-Risk Doula serving Jackson, MI and surrounding communities. Evidence-based, heart-centered support for every stage of your journey.</p>
+      </div>
+      <div class="f-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="packages.html">Packages &amp; Pricing</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="tel:5174949441">(517) 494-9441</a></li>
+          <li><a href="mailto:bumpbabydoulaservices@gmail.com">Email Tonya</a></li>
+          <li><a href="contact.html">Free Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2025 Bump to Baby Doula Services LLC. All rights reserved.</p>
+      <p>Jackson, MI · (517) 494-9441</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mob').classList.toggle('open'); }
+  document.addEventListener('click', e => {
+    const mob = document.getElementById('mob');
+    if (mob.classList.contains('open') && !mob.contains(e.target) && !e.target.closest('.hamburger')) {
+      mob.classList.remove('open');
+    }
+  });
+  document.querySelectorAll('.mobile-menu a:not(.mob-cta)').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mob').classList.remove('open'));
+  });
+
+  // Active nav
+  const page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
+    if (a.getAttribute('href') === page) a.classList.add('active');
+  });
+
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.rev').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

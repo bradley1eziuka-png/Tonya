@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packages &amp; Pricing | Bump to Baby Doula Services</title>
+  <meta name="description" content="Doula service packages from $3,500, including Essentials, Nurtured Journey, Rest & Renewal, and Heart-to-Home. HSA/FSA accepted. Jackson, MI.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── BADGES ──────────────────────────────── */
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.625rem;
+      margin-bottom: 3rem;
+    }
+    .badge {
+      background: var(--white);
+      border: 1.5px solid var(--cream-dk);
+      border-radius: 8px;
+      padding: 0.5rem 0.875rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--mid);
+    }
+
+    /* ── SECTION HEADERS ─────────────────────── */
+    .pkg-section-hed {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 500;
+      color: var(--dark);
+      margin: 3rem 0 1.25rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--cream-dk);
+    }
+    .pkg-section-hed:first-of-type { border-top: none; margin-top: 0; }
+
+    /* ── À LA CARTE ──────────────────────────── */
+    .ala-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 600px) { .ala-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .ala-card {
+      background: var(--cream);
+      border: 1.5px solid var(--cream-dk);
+      border-radius: 14px;
+      padding: 1.375rem 1rem;
+      text-align: center;
+    }
+    .ala-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .ala-price sup { font-size: 1rem; vertical-align: super; }
+    .ala-lbl {
+      font-size: 0.82rem;
+      color: var(--mid);
+      margin-top: 0.375rem;
+      line-height: 1.4;
+    }
+
+    /* ── PACKAGE CARDS ───────────────────────── */
+    .pkg-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 600px) { .pkg-grid { grid-template-columns: 1fr 1fr; } }
+
+    .pkg-card {
+      border-radius: 22px;
+      padding: 2rem 1.75rem;
+      border: 1.5px solid var(--cream-dk);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pkg-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(44,36,22,0.09);
+    }
+
+    /* Featured card, dark for maximum contrast */
+    .pkg-card.featured {
+      background: var(--dark);
+      border-color: var(--dark);
+    }
+    .pop-badge {
+      position: absolute;
+      top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--sage);
+      color: var(--white);
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.3rem 1.125rem;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .pkg-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+    .pkg-card.featured .pkg-name { color: var(--cream); }
+
+    .pkg-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.75rem;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1;
+      margin: 0.75rem 0;
+    }
+    .pkg-card.featured .pkg-price { color: var(--cream); }
+
+    .pkg-plus-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.75rem;
+    }
+    .pkg-card.featured .pkg-plus-label { color: var(--sage-lt); }
+
+    .pkg-feats {
+      list-style: none;
+      flex: 1;
+      margin-bottom: 1.75rem;
+    }
+    .pkg-feats li {
+      font-size: 0.925rem;
+      color: var(--mid);
+      padding: 0.45rem 0 0.45rem 1rem;
+      border-bottom: 1px solid var(--cream-dk);
+      position: relative;
+    }
+    .pkg-feats li:last-child { border-bottom: none; }
+    .pkg-feats li::before {
+      content: '';
+      position: absolute; left: 0; top: 13px;
+      width: 6px; height: 6px;
+      border-radius: 50%; background: var(--sage);
+    }
+    .pkg-card.featured .pkg-feats li {
+      color: rgba(250,246,239,0.88);
+      border-bottom-color: rgba(250,246,239,0.12);
+    }
+    .pkg-card.featured .pkg-feats li::before { background: var(--sage-lt); }
+
+    .pkg-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      border-radius: 100px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      background: var(--sage);
+      color: var(--white);
+      text-align: center;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .pkg-btn:hover { background: var(--sage-dk); transform: translateY(-1px); }
+    .pkg-card.featured .pkg-btn { background: var(--cream); color: var(--dark); }
+    .pkg-card.featured .pkg-btn:hover { background: #fff; }
+
+    /* ── HEART-TO-HOME ───────────────────────── */
+    .hth-card {
+      background: var(--sage-pale);
+      border: 1.5px solid var(--sage-lt);
+      border-radius: 22px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    .hth-card h3 {
+      font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--dark);
+    }
+    .hth-card > p { font-size: 0.975rem; color: var(--mid); margin-bottom: 1.5rem; }
+
+    .hth-tiers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.875rem;
+    }
+    @media (min-width: 600px) { .hth-tiers { grid-template-columns: repeat(4, 1fr); } }
+
+    .hth-tier {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.125rem 0.875rem;
+      text-align: center;
+      border: 1.5px solid var(--cream-dk);
+    }
+    .hth-days {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.25rem; font-weight: 600; color: var(--dark); line-height: 1;
+    }
+    .hth-day-lbl { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.375rem; }
+    .hth-price { font-size: 0.975rem; font-weight: 700; color: var(--sage-dk); }
+
+    .hth-includes {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--sage-lt);
+    }
+    .hth-includes h4 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 0.625rem;
+    }
+    .hth-includes ul { list-style: none; display: flex; flex-direction: column; gap: 0.375rem; }
+    .hth-includes li {
+      font-size: 0.9rem; color: var(--mid);
+      padding-left: 1rem; position: relative;
+    }
+    .hth-includes li::before {
+      content: ''; position: absolute; left: 0; top: 9px;
+      width: 5px; height: 5px; border-radius: 50%; background: var(--sage);
+    }
+
+    /* ── INSURANCE NOTE ──────────────────────── */
+    .ins-note {
+      background: var(--white);
+      border: 1.5px solid var(--cream-dk);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin-top: 2.5rem;
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+    .ins-note strong { color: var(--dark); display: block; margin-bottom: 0.375rem; font-size: 1rem; }
+  </style>
+</head>
+<body class="page-wrap" data-page="packages.html">
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="Brand Assets/Logo.png" alt="Bump to Baby Doula Services">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="packages.html">Packages &amp; Pricing</a></li>
+    <li><a href="faq.html">FAQs</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta-btn">Free Consultation</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="packages.html">Packages &amp; Pricing</a>
+  <a href="faq.html">FAQs</a>
+  <a href="resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mob-cta">Book Free Consultation</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-in">
+    <span class="lbl">Investment</span>
+    <h1>Packages &amp; Pricing</h1>
+    <p>Every package includes a free CPST car seat check and Safe Sleep consultation. HSA, FSA, and flexible payment plans available.</p>
+  </div>
+</div>
+
+<section>
+  <div class="inner">
+
+    <div class="badge-row">
+      <span class="badge">HSA / FSA Accepted</span>
+      <span class="badge">Medicaid Inquiries Welcome</span>
+      <span class="badge">Flexible Payment Plans</span>
+      <span class="badge">Free CPST with Every Package</span>
+      <span class="badge">Free Safe Sleep Consult</span>
+    </div>
+
+    <!-- À La Carte -->
+    <p class="pkg-section-hed">À La Carte Options</p>
+    <div class="ala-grid">
+      <div class="ala-card rev">
+        <div class="ala-price">$35<sup>/hr</sup></div>
+        <div class="ala-lbl">Daytime Support<br>Hourly rate</div>
+      </div>
+      <div class="ala-card rev d1">
+        <div class="ala-price">$125</div>
+        <div class="ala-lbl">Daytime Support<br>Up to 4 hours</div>
+      </div>
+      <div class="ala-card rev d2">
+        <div class="ala-price">$40<sup>/hr</sup></div>
+        <div class="ala-lbl">Overnight Support<br>Hourly rate</div>
+      </div>
+      <div class="ala-card rev d3">
+        <div class="ala-price">$280</div>
+        <div class="ala-lbl">Overnight Support<br>Up to 8 hours</div>
+      </div>
+    </div>
+
+    <!-- Full Packages -->
+    <p class="pkg-section-hed">Full Support Packages</p>
+    <div class="pkg-grid">
+
+      <!-- Tier 1: Essentials -->
+      <div class="pkg-card rev">
+        <p class="pkg-name">The Essentials</p>
+        <div class="pkg-price">$3,500</div>
+        <ul class="pkg-feats">
+          <li>1 initial consultation</li>
+          <li>1 prenatal visit</li>
+          <li>1 feeding workshop</li>
+          <li>Full labor &amp; delivery support</li>
+          <li>Up to 10 daytime postpartum visits (40 hrs)</li>
+          <li>Unlimited text support throughout</li>
+          <li>Free CPST car seat inspection</li>
+          <li>Safe Sleep consultation</li>
+        </ul>
+        <a href="contact.html" class="pkg-btn">Get Started</a>
+      </div>
+
+      <!-- Tier 2: Nurtured Journey, featured -->
+      <div class="pkg-card featured rev d1">
+        <div class="pop-badge">Most Popular</div>
+        <p class="pkg-name">The Nurtured Journey</p>
+        <div class="pkg-price">$4,125</div>
+        <p class="pkg-plus-label">Everything in The Essentials, plus:</p>
+        <ul class="pkg-feats">
+          <li>5 additional postpartum daytime visits (60 hrs total)</li>
+          <li>Overnight care upgrade option</li>
+          <li>Extended lactation support</li>
+        </ul>
+        <a href="contact.html" class="pkg-btn">Get Started</a>
+      </div>
+
+      <!-- Tier 3: Rest & Renewal -->
+      <div class="pkg-card rev">
+        <p class="pkg-name">Rest &amp; Renewal</p>
+        <div class="pkg-price">$4,600</div>
+        <p class="pkg-plus-label">Everything in The Nurtured Journey, plus:</p>
+        <ul class="pkg-feats">
+          <li>Two overnight postpartum shifts (8-hr blocks)</li>
+          <li>Dedicated overnight newborn care</li>
+          <li>Detailed overnight reports each shift</li>
+        </ul>
+        <a href="contact.html" class="pkg-btn">Get Started</a>
+      </div>
+
+      <!-- Tier 4: Heart-to-Home -->
+      <div class="pkg-card rev d1">
+        <p class="pkg-name">The Heart-to-Home</p>
+        <div class="pkg-price">$5,000<span style="font-size:1.5rem;font-weight:400">+</span></div>
+        <p class="pkg-plus-label">Everything in Rest &amp; Renewal, plus:</p>
+        <ul class="pkg-feats">
+          <li>24/7 live-in support (7, 14, 21, or 30 days)</li>
+          <li>Round-the-clock newborn care</li>
+          <li>All overnight feedings covered</li>
+          <li>Accommodation options available</li>
+        </ul>
+        <a href="contact.html" class="pkg-btn">See Rates</a>
+      </div>
+
+    </div>
+
+    <!-- Heart-to-Home extended tiers -->
+    <div class="hth-card rev">
+      <h3>Heart-to-Home Extended Rates</h3>
+      <p>Live-in, 24/7 newborn care for families who want full immersive support through the critical first weeks.</p>
+      <div class="hth-tiers">
+        <div class="hth-tier">
+          <div class="hth-days">7</div>
+          <div class="hth-day-lbl">days</div>
+          <div class="hth-price">$5,000+</div>
+        </div>
+        <div class="hth-tier">
+          <div class="hth-days">14</div>
+          <div class="hth-day-lbl">days</div>
+          <div class="hth-price">$9,500+</div>
+        </div>
+        <div class="hth-tier">
+          <div class="hth-days">21</div>
+          <div class="hth-day-lbl">days</div>
+          <div class="hth-price">$14,000+</div>
+        </div>
+        <div class="hth-tier">
+          <div class="hth-days">30</div>
+          <div class="hth-day-lbl">days</div>
+          <div class="hth-price">$19,500+</div>
+        </div>
+      </div>
+      <div class="hth-includes">
+        <h4>Every Heart-to-Home package includes</h4>
+        <ul>
+          <li>24/7 live-in support and newborn care</li>
+          <li>All feedings, overnight and daytime</li>
+          <li>Daily wellness check-ins for you and your family</li>
+          <li>Lactation and feeding support</li>
+          <li>Light household assistance</li>
+          <li>Accommodation options available upon request</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Insurance note -->
+    <div class="ins-note rev">
+      <strong>Insurance, HSA &amp; FSA, and payment plans</strong>
+      Some commercial insurance plans and Medicaid programs cover doula services, it's worth checking with your provider. HSA and FSA accounts are accepted. Flexible payment plans are available so cost is never the reason a family doesn't get support. Reach out and we'll find what works.
+    </div>
+
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Not sure which package fits?</h2>
+  <p>Book a free consultation and we'll figure it out together.</p>
+  <a href="contact.html" class="btn btn-white">Book Free Consultation</a>
+</div>
+
+<footer>
+  <div class="footer-in">
+    <div class="footer-top">
+      <div class="f-brand">
+        <img src="Brand Assets/Logo.png" alt="Bump to Baby Doula Services">
+        <p>Certified High-Risk Doula serving Jackson, MI and surrounding communities.</p>
+      </div>
+      <div class="f-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="packages.html">Packages &amp; Pricing</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="tel:5174949441">(517) 494-9441</a></li>
+          <li><a href="mailto:bumpbabydoulaservices@gmail.com">Email Tonya</a></li>
+          <li><a href="contact.html">Free Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2025 Bump to Baby Doula Services LLC. All rights reserved.</p>
+      <p>Jackson, MI · (517) 494-9441</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mob').classList.toggle('open'); }
+  document.addEventListener('click', e => {
+    const mob = document.getElementById('mob');
+    if (mob.classList.contains('open') && !mob.contains(e.target) && !e.target.closest('.hamburger')) mob.classList.remove('open');
+  });
+  const page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
+    if (a.getAttribute('href') === page) a.classList.add('active');
+  });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.rev').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
