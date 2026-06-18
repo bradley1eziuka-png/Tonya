@@ -402,5 +402,14 @@ footer {
 }
 .footer-bot p { font-size: 0.8rem; }
 
+.footer-credit {
+  font-size: 0.72rem;
+  color: rgba(250,246,239,0.32);
+  text-align: center;
+  margin-top: 0.875rem;
+}
+.footer-credit a { color: inherit; text-decoration: none; }
+.footer-credit a:hover { color: rgba(250,246,239,0.55); }
+
 /* ── SHARED NAV + FOOTER SCRIPT HOOK ────────── */
 /* JS sets .active on current-page link via data-page */
