@@ -264,6 +264,28 @@
             </div>
 
             <div class="form-group">
+              <label for="due-date">Estimated Due Date</label>
+              <input type="date" id="due-date" name="due_date">
+            </div>
+
+            <div class="form-group">
+              <label for="delivery-location">Location of Delivery (hospital, home birth, birth center, etc.)</label>
+              <input type="text" id="delivery-location" name="delivery_location" placeholder="Where do you plan to deliver?">
+            </div>
+
+            <div class="form-group">
+              <label for="insurance">Insurance</label>
+              <div class="form-select-wrap">
+                <select id="insurance" name="insurance">
+                  <option value="" disabled selected>Select an option…</option>
+                  <option value="commercial">Commercial Insurance</option>
+                  <option value="medicaid">Michigan Medicaid</option>
+                  <option value="self-pay">Self-Pay</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
               <label for="service">Service I'm Interested In <span style="color:var(--rose)">*</span></label>
               <div class="form-select-wrap">
                 <select id="service" name="service" required>
