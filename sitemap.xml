@@ -1,79 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bumpbabydoula.com/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://www.bumpbabydoula.com/</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/about.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/services.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/services.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/packages.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/high-risk-birth-support.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/faq.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/postpartum-support.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/resources.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/bereavement-loss-support.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/contact.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/lactation-specialist.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/high-risk-birth-support.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/birth-plan-education.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/postpartum-support.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/overnight-nourish-support.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/bereavement-loss-support.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/child-passenger-safety.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/lactation-specialist.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/safe-sleep-ambassador.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/birth-plan-education.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/packages.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/overnight-nourish-support.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/faq.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/child-passenger-safety.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/resources.html</loc>
   </url>
   <url>
-    <loc>https://bumpbabydoula.com/safe-sleep-ambassador.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bumpbabydoula.com/contact.html</loc>
   </url>
 </urlset>
-

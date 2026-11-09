@@ -3,7 +3,7 @@
    Mobile-first. All tap targets ≥ 44px.
    ================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Nunito:wght@400;500;600;700&display=swap');
+/* Fonts are loaded via <link> in each page head (avoids a render-blocking @import chain). */
 
 :root {
   --cream:      #FAF6EF;
@@ -413,3 +413,114 @@ footer {
 
 /* ── SHARED NAV + FOOTER SCRIPT HOOK ────────── */
 /* JS sets .active on current-page link via data-page */
+
+
+/* ── SKIP LINK ───────────────────────────────── */
+
+.skip-link {
+  position: absolute; left: 0.75rem; top: -4rem; z-index: 300;
+  background: var(--dark); color: var(--cream);
+  padding: 0.65rem 1rem; border-radius: 8px;
+  font-weight: 700; font-size: 0.9rem;
+}
+.skip-link:focus { top: 0.75rem; }
+[id="main"]:focus { outline: none; }
+
+:focus-visible { outline: 3px solid var(--sage-dk); outline-offset: 2px; }
+
+/* ── SERVICES DROPDOWN (desktop) ─────────────── */
+
+.nav-links { align-self: stretch; }
+.nav-links .has-dd {
+  position: relative;
+  align-self: stretch;
+  display: flex; align-items: center;
+}
+.nav-links .has-dd > .dd-link { padding-right: 0.2rem; }
+.dd-toggle {
+  display: flex; align-items: center; justify-content: center;
+  width: 28px; min-height: 44px;
+  background: none; border: none; cursor: pointer;
+  color: var(--mid); border-radius: 8px;
+  margin-left: -0.1rem; padding: 0;
+  transition: color 0.2s, background 0.2s;
+}
+.dd-toggle svg {
+  width: 14px; height: 14px; fill: none; stroke: currentColor;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform 0.2s;
+}
+.dd-toggle:hover { color: var(--sage); background: var(--sage-pale); }
+.has-dd.open .dd-toggle svg { transform: rotate(180deg); }
+
+.dd-menu {
+  display: none;
+  position: absolute; top: 100%; left: 0;
+  min-width: 270px;
+  list-style: none;
+  background: var(--cream);
+  border: 1px solid var(--cream-dk);
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 14px 30px rgba(44,36,22,0.10);
+  padding: 0.5rem;
+  z-index: 250;
+}
+.has-dd:hover > .dd-menu,
+.has-dd.open > .dd-menu { display: block; }
+.nav-links .dd-menu a {
+  min-height: 42px; padding: 0 0.875rem;
+  font-size: 0.9rem; border-radius: 8px;
+}
+.nav-links .dd-menu .dd-all { border-top: 1px solid var(--cream-dk); margin-top: 0.35rem; padding-top: 0.35rem; }
+.nav-links .dd-menu .dd-all a { color: var(--sage-dk); font-weight: 700; }
+
+/* ── SERVICES SUBMENU (mobile) ───────────────── */
+
+.mobile-menu { max-height: calc(100vh - 64px); max-height: calc(100dvh - 64px); overflow-y: auto; }
+.mob-svc-row {
+  display: flex; align-items: stretch;
+  border-bottom: 1px solid var(--cream-dk);
+}
+.mob-svc-row > a { flex: 1; border-bottom: none; }
+.mob-svc-toggle {
+  width: 56px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; border-left: 1px solid var(--cream-dk);
+  cursor: pointer; color: var(--mid);
+}
+.mob-svc-toggle svg {
+  width: 18px; height: 18px; fill: none; stroke: currentColor;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform 0.2s;
+}
+.mob-svc-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.mob-svc-list { background: var(--sage-pale); }
+.mob-svc-list[hidden] { display: none; }
+.mobile-menu .mob-svc-list a {
+  min-height: 48px; padding-left: 2.25rem;
+  font-size: 0.95rem; font-weight: 500;
+}
+.mobile-menu .mob-svc-list a.mob-svc-all { color: var(--sage-dk); font-weight: 700; }
+
+/* ── SERVICES DIRECTORY (services page) ──────── */
+
+.svc-directory { margin-top: 3rem; text-align: center; }
+.svc-directory h2 { font-size: 1.5rem; font-weight: 500; margin-bottom: 1rem; }
+.svc-directory ul {
+  list-style: none; display: flex; flex-wrap: wrap;
+  justify-content: center; gap: 0.5rem 0.75rem;
+}
+.svc-directory a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  padding: 0 1.1rem; border: 1.5px solid var(--cream-dk);
+  border-radius: 100px; background: var(--white);
+  color: var(--mid); font-size: 0.9rem; font-weight: 600;
+  transition: border-color 0.2s, color 0.2s;
+}
+.svc-directory a:hover { border-color: var(--sage); color: var(--sage-dk); }
+
+.hero-also { margin-top: 1.25rem; font-size: 0.95rem; color: var(--mid); text-align: center; }
+.hero-also a { color: var(--sage-dk); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.has-dd.dd-suppress > .dd-menu { display: none !important; }
+.mob-svc-toggle, .dd-toggle { -webkit-tap-highlight-color: transparent; background-color: transparent; }
+.mob-svc-toggle svg { flex: none; }

@@ -3,16 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book a Free Consultation | Bump to Baby Doula Jackson MI</title>
-  <meta name="description" content="Ready to connect? Book a free consultation with Tonya, Certified High-Risk Doula in Jackson, MI. Call, text, or fill out the form. No pressure, no obligation.">
-  <link rel="icon" type="image/png" href="Favicon.png">
+  <title>Free Doula Consultation in Jackson, MI | Bump to Baby</title>
+  <meta name="description" content="Request a free consultation with Tonya, a doula serving Jackson, MI and surrounding communities. Call, text, email, or send the form. No obligation.">
+  <link rel="icon" type="image/png" href="Favicon-sm.png">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://bumpbabydoula.com/contact.html">
-  <meta property="og:title" content="Book a Free Consultation | Bump to Baby Doula Jackson MI">
-  <meta property="og:description" content="Ready to connect? Book a free consultation with Tonya, Certified High-Risk Doula in Jackson, MI. Call, text, or fill out the form. No pressure, no obligation.">
+  <link rel="canonical" href="https://www.bumpbabydoula.com/contact.html">
+  <meta property="og:title" content="Free Doula Consultation in Jackson, MI | Bump to Baby">
+  <meta property="og:description" content="Request a free consultation with Tonya, a doula serving Jackson, MI and surrounding communities. Call, text, email, or send the form. No obligation.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bumpbabydoula.com/contact.html">
+  <meta property="og:site_name" content="Bump to Baby Doula Services">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://www.bumpbabydoula.com/contact.html">
+  <meta property="og:image" content="https://www.bumpbabydoula.com/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bump to Baby Doula Services, Jackson, MI: You deserve support that stays with you">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Nunito:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="styles.css">
+  <script src="nav.js" defer></script>
   <style>
     .contact-layout {
       display: grid;
@@ -137,31 +149,81 @@
     .form-msg.success { background: var(--sage-pale); color: var(--sage-dk); border: 1.5px solid var(--sage-lt); }
     .form-msg.error { background: #fdf1f1; color: #8b2e2e; border: 1.5px solid #e8b4b4; }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.bumpbabydoula.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contact",
+      "item": "https://www.bumpbabydoula.com/contact.html"
+    }
+  ]
+}
+  </script>
 </head>
-<body class="page-wrap" data-page="contact.html">
+\1\n<a class="skip-link" href="#main">Skip to main content</a>
 
-<nav>
+<nav aria-label="Main">
   <a href="index.html" class="nav-logo">
-    <img src="Brand Assets/Logo.png" alt="Bump to Baby Doula Services">
+    <img src="Brand Assets/Logo-sm.png" width="53" height="46" alt="Bump to Baby Doula Services">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
+    <li class="has-dd">
+      <a href="services.html" class="dd-link">Services</a>
+      <button type="button" class="dd-toggle" aria-expanded="false" aria-controls="svc-dd" aria-label="Services menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <ul class="dd-menu" id="svc-dd">
+        <li><a href="high-risk-birth-support.html">High-Risk Birth Support</a></li>
+        <li><a href="postpartum-support.html">Postpartum Support</a></li>
+        <li><a href="bereavement-loss-support.html">Bereavement &amp; Loss Support</a></li>
+        <li><a href="lactation-specialist.html">Lactation Specialist</a></li>
+        <li><a href="birth-plan-education.html">Birth Plan Education</a></li>
+        <li><a href="overnight-nourish-support.html">Overnight Nourish &amp; Support</a></li>
+        <li><a href="child-passenger-safety.html">Child Passenger Safety (CPST)</a></li>
+        <li><a href="safe-sleep-ambassador.html">Safe Sleep Ambassador</a></li>
+        <li class="dd-all"><a href="services.html">View All Services</a></li>
+      </ul>
+    </li>
     <li><a href="packages.html">Packages &amp; Pricing</a></li>
     <li><a href="faq.html">FAQs</a></li>
     <li><a href="resources.html">Resources</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="contact.html" class="nav-cta-btn">Free Consultation</a></li>
   </ul>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-controls="mob" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mob">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="services.html">Services</a>
+  <div class="mob-svc">
+    <div class="mob-svc-row">
+      <a href="services.html">Services</a>
+      <button type="button" class="mob-svc-toggle" aria-expanded="false" aria-controls="mob-svc-list" aria-label="Show service pages"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg></button>
+    </div>
+    <div class="mob-svc-list" id="mob-svc-list" hidden>
+      <a href="high-risk-birth-support.html">High-Risk Birth Support</a>
+      <a href="postpartum-support.html">Postpartum Support</a>
+      <a href="bereavement-loss-support.html">Bereavement &amp; Loss Support</a>
+      <a href="lactation-specialist.html">Lactation Specialist</a>
+      <a href="birth-plan-education.html">Birth Plan Education</a>
+      <a href="overnight-nourish-support.html">Overnight Nourish &amp; Support</a>
+      <a href="child-passenger-safety.html">Child Passenger Safety (CPST)</a>
+      <a href="safe-sleep-ambassador.html">Safe Sleep Ambassador</a>
+      <a href="services.html" class="mob-svc-all">View All Services</a>
+    </div>
+  </div>
   <a href="packages.html">Packages &amp; Pricing</a>
   <a href="faq.html">FAQs</a>
   <a href="resources.html">Resources</a>
@@ -169,10 +231,10 @@
   <a href="contact.html" class="mob-cta">Book Free Consultation</a>
 </div>
 
-<div class="page-hero">
+<div class="page-hero" id="main" tabindex="-1">
   <div class="page-hero-in">
     <span class="lbl">Start Here</span>
-    <h1>Let's Talk</h1>
+    <h1>Schedule Your Free Doula Consultation</h1>
     <p>A free consultation is the first step, no pressure, no obligation. Just an honest conversation about where you are and how I can help.</p>
   </div>
 </div>
@@ -210,7 +272,7 @@
           </div>
           <div class="ci-text">
             <strong>Location</strong>
-            <p>Jackson, MI &amp; surrounding communities</p>
+            <p>Serving Jackson, Michigan, and surrounding communities. Additional travel may be available by arrangement.</p>
           </div>
         </div>
 
@@ -231,10 +293,10 @@
         <span class="lbl">Free Consultation Request</span>
         <h2 class="h2" style="margin-bottom:1.5rem;">Tell me about your journey</h2>
 
-        <div class="form-msg success" id="msg-success">
+        <div class="form-msg success" id="msg-success" role="status" tabindex="-1">
           Thank you, I'll be in touch within 24 hours. I look forward to connecting with you.
         </div>
-        <div class="form-msg error" id="msg-error">
+        <div class="form-msg error" id="msg-error" role="alert" tabindex="-1">
           Something went wrong. Please try again or reach out directly at (517) 494-9441.
         </div>
 
@@ -245,36 +307,36 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="first-name">First Name <span style="color:var(--rose)">*</span></label>
-                <input type="text" id="first-name" name="first_name" placeholder="First name" required>
+                <input type="text" id="first-name" name="first_name" placeholder="First name" autocomplete="given-name" required>
               </div>
               <div class="form-group">
                 <label for="last-name">Last Name <span style="color:var(--rose)">*</span></label>
-                <input type="text" id="last-name" name="last_name" placeholder="Last name" required>
+                <input type="text" id="last-name" name="last_name" placeholder="Last name" autocomplete="family-name" required>
               </div>
             </div>
 
             <div class="form-group">
               <label for="email">Email Address <span style="color:var(--rose)">*</span></label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+              <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required>
             </div>
 
             <div class="form-group">
               <label for="phone">Phone / Text</label>
-              <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number" autocomplete="tel">
             </div>
 
             <div class="form-group">
-              <label for="due-date">Estimated Due Date</label>
+              <label for="due-date">Estimated Due Date <span style="font-weight:400;color:var(--muted)">(optional, if pregnant)</span></label>
               <input type="date" id="due-date" name="due_date">
             </div>
 
             <div class="form-group">
-              <label for="delivery-location">Location of Delivery (hospital, home birth, birth center, etc.)</label>
+              <label for="delivery-location">Location of Delivery <span style="font-weight:400;color:var(--muted)">(optional: hospital, home birth, birth center, etc.)</span></label>
               <input type="text" id="delivery-location" name="delivery_location" placeholder="Where do you plan to deliver?">
             </div>
 
             <div class="form-group">
-              <label for="insurance">Insurance</label>
+              <label for="insurance">Insurance <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
               <div class="form-select-wrap">
                 <select id="insurance" name="insurance">
                   <option value="" disabled selected>Select an option…</option>
@@ -293,7 +355,7 @@
                   <option value="high-risk">High-Risk Pregnancy Support</option>
                   <option value="postpartum">Postpartum Doula Care</option>
                   <option value="bereavement">Bereavement &amp; Loss Support</option>
-                  <option value="lactation">Lactation Specialist</option>
+                  <option value="lactation">Lactation &amp; Feeding Support</option>
                   <option value="birth-plan">Personalized Birth Plan</option>
                   <option value="overnight">Overnight Newborn Care</option>
                   <option value="cpst">CPST, Car Seat Check (Free)</option>
@@ -331,7 +393,7 @@
   <div class="footer-in">
     <div class="footer-top">
       <div class="f-brand">
-        <img src="Brand Assets/Logo.png" alt="Bump to Baby Doula Services">
+        <img src="Brand Assets/Logo-sm.png" width="53" height="46" alt="Bump to Baby Doula Services">
         <p>Certified High-Risk Doula serving Jackson, MI and surrounding communities.</p>
       </div>
       <div class="f-col">
@@ -373,6 +435,15 @@
     if (a.getAttribute('href') === page) a.classList.add('active');
   });
 
+  // Preselect the service when arriving from a service page (?service=overnight)
+  (function () {
+    try {
+      const wanted = new URLSearchParams(location.search).get('service');
+      const sel = document.getElementById('service');
+      if (wanted && sel && Array.from(sel.options).some(o => o.value === wanted)) sel.value = wanted;
+    } catch (e) {}
+  })();
+
   // Formspree AJAX submit
   const form = document.getElementById('contact-form');
   form.addEventListener('submit', async function(e) {
@@ -387,7 +458,9 @@
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
+        document.getElementById('msg-error').style.display = 'none';
         document.getElementById('msg-success').style.display = 'block';
+        document.getElementById('msg-success').focus();
         form.reset();
         btn.textContent = 'Message Sent ✓';
       } else {
@@ -395,6 +468,7 @@
       }
     } catch {
       document.getElementById('msg-error').style.display = 'block';
+      document.getElementById('msg-error').focus();
       btn.textContent = 'Send My Request';
       btn.disabled = false;
     }
